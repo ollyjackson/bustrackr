@@ -1,10 +1,14 @@
-#Bus Stop location data available in various forms
+All of this data is scraped from the Lothoian Buses website.
+
+Files contain the following fields:
+
+* Name of stop (sometimes truncated)
+* "Short code" of stop
+* Latitude & Longitude of stop location
 
 Download in:
   * [http://bustrackr.googlecode.com/svn/trunk/data/stopdata.csv CSV]
   * [http://bustrackr.googlecode.com/svn/trunk/data/stopdata.sql SQL inserts]
   * [http://bustrackr.googlecode.com/svn/trunk/data/stopdata.kml KML]
 
-View KML on Google Maps:
-
-http://maps.google.co.uk/maps?q=http:%2F%2Fbustrackr.googlecode.com%2Fsvn%2Ftrunk%2Fdata%2Fstopdata.kml&ie=UTF8&hl=en&z=10
+[http://maps.google.co.uk/maps?q=http:%2F%2Fbustrackr.googlecode.com%2Fsvn%2Ftrunk%2Fdata%2Fstopdata.kml&ie=UTF8&hl=en&z=10 View KML on Google Maps]
