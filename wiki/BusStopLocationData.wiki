@@ -2,9 +2,9 @@ All of this data is scraped from the Lothoian Buses website.
 
 Files contain the following fields:
 
-* Name of stop (sometimes truncated)
-* "Short code" of stop
-* Latitude & Longitude of stop location
+  * Name of stop (sometimes truncated)
+  * "Short code" of stop
+  * Latitude & Longitude of stop location
 
 Download in:
   * [http://bustrackr.googlecode.com/svn/trunk/data/stopdata.csv CSV]
