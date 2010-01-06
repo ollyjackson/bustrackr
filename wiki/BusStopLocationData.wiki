@@ -1,4 +1,4 @@
-All of this data is scraped from the Lothoian Buses website.
+All of this data is scraped from the Lothian Buses website.
 
 Files contain the following fields:
 
