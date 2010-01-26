@@ -22,7 +22,7 @@ $method = $_GET['method'];
 
 switch ($method) {
 case "bustracker.departures.getNext":
-	include("bustracker.departures.getNext");
+	include("bustracker.departures.getNext.php");
 	break;
 default:
 	include("default");

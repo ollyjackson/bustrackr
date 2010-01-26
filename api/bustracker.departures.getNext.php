@@ -12,10 +12,11 @@ $xpath = $xml->xpath("//*[@id=\"displayDepartures\"]");
 $returnxml = new SimpleXmlElement("<bustracker></bustracker>");
 foreach (($xpath[0]->pre) as $pre) {
 	// behold my mad reg-ex skillz
-	preg_match("/(N*\d*) *([A-Z ]*)\**(\d*(:\d\d)*)/",$pre,$matches);
+	preg_match("/([N|X]*\d*[A-Z]?) *([A-Z ]*)\**(\d*(:\d\d)*)/",$pre,$matches);
 	$departure_node = $returnxml->addChild("departure");
 	$departure_node->addChild("service",trim($matches[1]));
-	$departure_node->addChild("destination",trim($matches[2]));
+	$destination = preg_replace("/ *DUE/", "", trim($matches[2]));
+	$departure_node->addChild("destination",$destination);
 	if (strpos($matches[3],":")) {
 		// if hours is less < current hour then add tomorrow's day before we strtotime it
 		if (substr($matches[3],0,2) < date("h") ) {
@@ -30,7 +31,15 @@ foreach (($xpath[0]->pre) as $pre) {
 		$timechild->addAttribute("estimated","true");
 	}
 	else {
-		$departure_node->addChild("mins",trim($matches[3]));
+		$mins = trim($matches[3]);
+		if ($mins == "")
+		{
+			$departure_node->addChild("mins","0");
+		}
+		else
+		{
+			$departure_node->addChild("mins",$mins);
+		}
 	}
 }
 echo $returnxml->asXML();
