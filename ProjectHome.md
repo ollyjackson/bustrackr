@@ -1,0 +1,1 @@
+This project provides a REST-ful API to access the location/timetable information provided by Lothan Buses via mybustracker.co.uk
